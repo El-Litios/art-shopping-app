@@ -13,3 +13,9 @@
   
 </script>
 
+<style lang="css">
+.v-toolbar{
+  background-color: transparent!important;
+}
+</style>
+
