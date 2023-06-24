@@ -1,10 +1,8 @@
 <template>
   <v-app-bar>
     <template v-slot:append>
-      <v-btn class="my-button" icon="mdi-github" size="large"></v-btn>
-      <v-btn icon="mdi-linkedin" size="large"></v-btn>
-      <v-btn icon="mdi-email" size="large"></v-btn>
-
+      <v-btn class="text-h5" >Registro <v-icon class="mdi mdi-account-plus" size="x-small"></v-icon> </v-btn>
+      <v-btn class="text-h5" >Ingresar <v-icon class="mdi mdi-login" size="x-small"></v-icon> </v-btn>
     </template>
   </v-app-bar>
 </template>
@@ -13,9 +11,12 @@
   
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .v-toolbar{
   background-color: transparent!important;
+}
+.v-btn{
+  color: white;
 }
 </style>
 
