@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-
+import AuthRoutes from '@/modules/auth/router'
 const routes = [
   {
     path: '/',
@@ -13,6 +13,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/auth',
+    ...AuthRoutes
+  }
 ]
 
 const router = createRouter({
