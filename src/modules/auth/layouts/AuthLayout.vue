@@ -9,6 +9,6 @@
 <script setup>
 </script>
 
-<style module>
+<style>
 @import '../styles/auth.css';
 </style>
