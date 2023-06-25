@@ -14,9 +14,6 @@
 
 </script>
 
-<style lang="css" scoped>
-.v-card {
-  background-color: #101314;
-  color: white;
-}
+<style lang="css">
+
 </style>

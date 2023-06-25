@@ -11,12 +11,7 @@
   
 </script>
 
-<style lang="css" scoped>
-.v-toolbar{
-  background-color: transparent!important;
-}
-.v-btn{
-  color: white;
-}
+<style lang="css">
+
 </style>
 
