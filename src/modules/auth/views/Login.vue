@@ -28,8 +28,5 @@ const user = ref({
 </script>
 
 <style>
-.auth-btn{
-    background-color: #0044D1;
-    font-size: large;
-}
+
 </style>

@@ -35,8 +35,5 @@ function ver(){
 </script>
 
 <style lang="css">
-.auth-btn{
-    background-color: #0044D1;
-    font-size: large;
-}
+
 </style>
