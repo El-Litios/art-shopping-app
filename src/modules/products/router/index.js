@@ -5,7 +5,7 @@ export default {
          {
             path: '',
             name: 'Products',
-            component: () => import(/* webpackChunkName: 'products list' */  '@/modules/products/views/Prducts.vue'),
+            component: () => import(/* webpackChunkName: 'products list' */  '@/modules/products/views/Products.vue'),
         }
     ]
 }
