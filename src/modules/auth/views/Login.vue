@@ -10,7 +10,7 @@
         <v-text-field v-model="user.pass"></v-text-field>
       </template>
       <template v-slot:buttons>
-        <v-btn class="auth-btn" @click="ver" block>Ingresar</v-btn>
+        <v-btn class="auth-btn" block>Ingresar</v-btn>
       </template>
     </LoginForm>
   </v-form>
