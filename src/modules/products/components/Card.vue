@@ -11,7 +11,7 @@
         Ymagin<b>arte</b>
       </p>
       <div
-        class="text-subtitle-1 text-gray mt-2 text-center mr-2 ml-2 card-body"
+        class="text-h6 text-gray mt-2 text-center mr-2 ml-2 card-body"
       >
         <p>
           Somos una tienda y equipo pequeño dedicados a fabricar ideas y
@@ -27,7 +27,7 @@
         <span class="text-subtitle-1">Curicó.</span>
       </div>
       <div
-        class="text-subtitle-1 text-gray mt-3 text-center mr-1 ml-1 card-footer"
+        class="text-h6 text-gray mt-3 text-center mr-1 ml-1 card-footer"
       >
         <p class="text-h5">¿Tienes algún proyecto?</p>
         <v-divider :thickness="3" class="border-opacity-25 ma-2"></v-divider>
@@ -37,7 +37,7 @@
           profesionales en diseño.
         </p>
 
-        <v-btn class="ma-2 text-subtitle-1">Correo Electrónico</v-btn>
+        <v-btn class="ma-2 text-h6">Correo Electrónico</v-btn>
       </div>
     </v-card-text>
   </v-card>
@@ -62,11 +62,9 @@
   color: #a77308;
 }
 
-.card-body {
-  letter-spacing: 0.0206em !important;
-}
+
 .card-footer {
-  letter-spacing: 1.2px !important;
+
   color: #a1caf0;
   border: 1px solid #61a1dd;
   border-radius: 20px;
