@@ -10,7 +10,7 @@
         <v-text-field v-model="user.pass"></v-text-field>
       </template>
       <template v-slot:buttons>
-        <v-btn class="auth-btn" block>Ingresar</v-btn>
+        <v-btn class="auth-btn" :to="{name: 'Products'}" block>Ingresar</v-btn>
       </template>
     </LoginForm>
   </v-form>
@@ -28,5 +28,12 @@ const user = ref({
 </script>
 
 <style>
-
+.v-text-field input {
+  font-size: 1.3em;
+letter-spacing: 0.0095em !important;
+}
+.auth-btn {
+background-color: #0044d1;
+font-size: large;
+}
 </style>
