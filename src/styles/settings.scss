@@ -8,6 +8,8 @@
   $body-font-family: "Amatic SC",
 );
 
+
+
 .v-main {
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
     linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -36,15 +38,7 @@
   color: white;
 }
 
-.v-text-field input {
-  font-size: 1.3em;
-letter-spacing: 0.0095em !important;
-}
-.auth-btn {
-background-color: #0044d1;
-font-size: large;
-}
 .v-card {
-background-color: #101314 !important;
-color: white !important;
-}
+  background-color: #101314 !important;
+  color: white !important;
+  }
