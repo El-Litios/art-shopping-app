@@ -10,5 +10,4 @@
 </script>
 
 <style>
-@import '../styles/auth.css';
 </style>
