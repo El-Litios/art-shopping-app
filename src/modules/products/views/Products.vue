@@ -6,6 +6,8 @@
     </v-col>
     <v-col lg="6" md="12" sm="12" cols="12">
         <Carousel></Carousel>
+        <br>
+        <ProductList></ProductList>
     </v-col>
     <v-col lg="3" md="12" sm="12" cols="12">
         <Links></Links>
@@ -18,6 +20,7 @@ import Navbar from '../components/Nabvar.vue'
 import Card from '../components/Card.vue'
 import Carousel from '../components/Carousel.vue'
 import Links from '../components/Links.vue'
+import ProductList from '../components/ProductList.vue'
 </script>
 
 <style>
