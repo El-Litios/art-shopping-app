@@ -22,14 +22,16 @@
     <v-row class="mr-4 ml-4 mb-4">
       <v-col cols="4">
         <v-card class="mx-auto product-card">
-          <v-btn class="pa-0 mx-auto" height="300">
             <v-img
               src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              class="align-end product-image"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="300px"
               width="344"
               cover
-            ></v-img>
-          </v-btn>
+            >
+              <v-card-title class="text-white product-title" >aaaaa</v-card-title>
+            </v-img>
         </v-card>
       </v-col>
     </v-row>
@@ -39,7 +41,7 @@
 <script setup>
 </script>
 
-<style>
+<style lang="css">
 .product-list {
   background-color: transparent !important;
   backdrop-filter: blur(10px);
@@ -64,5 +66,18 @@
 
 .product-card {
   background-color: rgb(109, 171, 202) !important;
+}
+
+.product-image:hover{
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.product-image:hover .product-title{
+  display: block;
+}
+
+.product-title {
+  display: none;
 }
 </style>
