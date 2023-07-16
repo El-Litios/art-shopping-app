@@ -20,14 +20,42 @@
       <v-text-field> </v-text-field>
     </v-col>
     <v-row class="mr-4 ml-4 mb-4">
-      <v-col cols="4">
+      <v-col cols="12" lg="4" md="6">
         <v-card class="mx-auto product-card">
             <v-img
               src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
               class="align-end product-image"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="300px"
-              width="344"
+              max-width="372"
+              height="200"
+              cover
+            >
+              <v-card-title class="text-white product-title" >aaaaa</v-card-title>
+            </v-img>
+        </v-card>
+      </v-col>
+      <v-col cols="12" lg="4" md="6">
+        <v-card class="mx-auto product-card">
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              class="align-end product-image"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              max-width="372"
+              height="200"
+              cover
+            >
+              <v-card-title class="text-white product-title" >aaaaa</v-card-title>
+            </v-img>
+        </v-card>
+      </v-col>
+      <v-col cols="12" lg="4" md="6">
+        <v-card class="mx-auto product-card">
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              class="align-end product-image"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              max-width="372"
+              height="200"
               cover
             >
               <v-card-title class="text-white product-title" >aaaaa</v-card-title>
