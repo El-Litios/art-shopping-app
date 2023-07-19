@@ -67,6 +67,15 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
+import useProducts from '../composables/useProducts'
+
+const { getCategories } = useProducts();
+
+onMounted(() => {
+  getCategories();
+})
+
 </script>
 
 <style lang="css">
