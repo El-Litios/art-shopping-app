@@ -1,13 +1,8 @@
-import { createApp } from 'vue'
+
 import { createStore } from 'vuex'
-import AuthModule from '@/modules/auth/store'
-import ProductModule from '@/modules/products/store'
+import auth from '@/modules/auth/store'
+import product from '@/modules/products/store'
 // Create a new store instance.
 const store = createStore({
-  modules: [AuthModule, ProductModule]
+  modules: [auth, product]
 })
-
-const app = createApp({ /* your root component */ })
-
-// Install the store instance as a plugin
-app.use(store)
