@@ -1,14 +1,15 @@
 import {db} from '@/api';
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 
-export const getCategoriesList = async () => {
+export const getCategoriesList = async ({commit}) => {
     const categoriesArr = [];
-    const category = doc(db, "categories")
-    const categoryDoc = await getDoc(category)
-
-    if (categoryDoc.exists()) {
-        console.log("Document data:", categoryDoc.data());
-      } else {
-        console.log("No such document!");
-      }
+    const categoryCollectionQuery = query(collection(db, "categories"));
+    const categoryCollection = await getDocs(categoryCollectionQuery);
+    categoryCollection.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      let data = doc.data()
+                data.id = doc.id
+                categoriesArr.push(data)
+    });
+    commit('setCategories', categoriesArr)
 }
