@@ -1,3 +1,3 @@
-export default setProducts = (state, payload) => {
-    state.categpries = payload
+export const  setCategories = (state, payload) => {
+    state.categories = payload
 }
