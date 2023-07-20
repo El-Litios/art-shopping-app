@@ -5,15 +5,7 @@
         class="select"
         bg-color="transparent"
         hide-details="true"
-        label="Categorías"
-        :items="[
-          'California',
-          'Colorado',
-          'Florida',
-          'Georgia',
-          'Texas',
-          'Wyoming',
-        ]"
+        label="Categorias" :items="categories"  item-title="name"
       ></v-select>
     </v-col>
     <v-col cols="8">
@@ -70,11 +62,12 @@
 import { onMounted } from 'vue'
 import useProducts from '../composables/useProducts'
 
-const { getCategories } = useProducts();
+const { getCategories, categories } = useProducts();
 
 onMounted(() => {
   getCategories();
 })
+
 
 </script>
 
