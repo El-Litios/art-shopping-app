@@ -1,8 +1,13 @@
 
 import { createStore } from 'vuex'
-import auth from '@/modules/auth/store'
-import product from '@/modules/products/store'
+import auth from '@/modules/auth/store/index'
+import products from '@/modules/products/store/index'
 // Create a new store instance.
 const store = createStore({
-  modules: [auth, product]
+  modules: {
+    auth,
+    products
+  }
 })
+
+export default store
