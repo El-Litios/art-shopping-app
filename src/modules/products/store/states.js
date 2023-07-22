@@ -1,4 +1,5 @@
 export default () => ({
     categories: [],
-    products: []
+    products: [],
+    searchTerm: '',
 })

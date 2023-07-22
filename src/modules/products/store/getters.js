@@ -3,5 +3,7 @@ export const categoriesInfo = (state) => {
 } 
 
 export const productsInfo = (state) => {
-    return state.products
+    return state.products.filter(item =>
+        item.name.toLowerCase().includes(state.searchTerm.toLowerCase())
+      );
 } 
