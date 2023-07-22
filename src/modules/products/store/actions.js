@@ -6,10 +6,21 @@ export const getCategoriesList = async ({commit}) => {
     const categoryCollectionQuery = query(collection(db, "categories"));
     const categoryCollection = await getDocs(categoryCollectionQuery);
     categoryCollection.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
       let data = doc.data()
                 data.id = doc.id
                 categoriesArr.push(data)
     });
     commit('setCategories', categoriesArr)
+}
+
+export const getProductsList = async ({commit}) => {
+    const productsArr = [];
+    const productCollectionQuery = query(collection(db, "products"));
+    const productCollection = await getDocs(productCollectionQuery);
+    productCollection.forEach((doc) => {
+      let data = doc.data()
+                data.id = doc.id
+                productsArr.push(data)
+    });
+    commit('setProducts', productsArr)
 }
