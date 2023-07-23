@@ -9,3 +9,7 @@ export const setProducts = (state, payload) => {
 export const setSearchTerm = (state, term) => {
   state.searchTerm = term;
 };
+
+export const setSearchItem = (state, item) => {
+  state.selectedItem = item;
+};
