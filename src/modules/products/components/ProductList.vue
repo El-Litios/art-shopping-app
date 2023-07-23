@@ -2,7 +2,7 @@
   <v-row class="product-list mr-2 ml-2">
     <v-col cols="4">
       <v-select class="select" bg-color="transparent" hide-details="true" label="Categorias" :items="categories"
-        item-title="name"></v-select>
+        item-title="name" v-model="searchItem" @update:modelValue="updateSelectedItem"></v-select>
     </v-col>
     <v-col cols="8">
       <v-text-field v-model="searchTerm" @input="updateSearchTerm" placeholder="Buscar productos"> </v-text-field>
@@ -21,10 +21,19 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import useProducts from '../composables/useProducts'
 
-const { getCategories, categories, getProducts, products, searchTerm, setSearchTerm } = useProducts();
+const {
+  categories,
+  products,
+  searchTerm,
+  searchItem,
+  getProducts,
+  setSearchTerm,
+  getCategories,
+  setSearchItem
+} = useProducts();
 
 onMounted(() => {
   getCategories();
@@ -33,6 +42,9 @@ onMounted(() => {
 
 const updateSearchTerm = (event) => {
   setSearchTerm(event.target.value);
+};
+const updateSelectedItem = (event) => {
+  setSearchItem(event)
 };
 
 
