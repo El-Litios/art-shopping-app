@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AuthRoutes from '@/modules/auth/router'
 import ProductsRoutes from '@/modules/products/router'
+import AdministationRoutes from '@/modules/administration/router'
 const routes = [
   {
     path: '/',
@@ -21,6 +22,10 @@ const routes = [
   {
     path: '/products',
     ...ProductsRoutes
+  },
+  {
+    path: '/administration',
+    ...AdministationRoutes
   }
 ]
 
