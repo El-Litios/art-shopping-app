@@ -1,6 +1,6 @@
 export default {
     name: 'administration',
-    component: () => import(/* webpackChunkName: 'administration layout' */ '@/modules/administration/layouts/ProductsLayout.vue'),
+    component: () => import(/* webpackChunkName: 'administration layout' */ '@/modules/administration/layouts/AdministrationLayout.vue'),
     children: [
          {
             path: '',
