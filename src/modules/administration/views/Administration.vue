@@ -1,11 +1,14 @@
 <template>
+    <Navbar></Navbar>
     <v-btn @click="getUsers"></v-btn>
-    <UsersTable :data="data"></UsersTable>
+    <v-container>
+        <UsersTable :data="data"></UsersTable>
+    </v-container>
 </template>
     
 <script setup>
-import { onMounted } from 'vue'
 import UsersTable from './../components/UsersTable.vue'
+import Navbar from '@/components/shared/Navbar.vue'
 import useAdministration from '../composables/useAdministration'
 
 const {
