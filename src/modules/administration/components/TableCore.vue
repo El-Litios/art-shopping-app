@@ -5,31 +5,22 @@
   >
     <thead>
       <tr>
-        <th v-for="column in columns" :key="column.key">{{ column.label }}</th>
+        <th class="bg-black text-white text-h6 font-weight-bold" v-for="column in columns" :key="column.key">
+          {{ column.label }}
+        </th>
+        <th colspan="2" class="text-center bg-black text-h6 font-weight-bold">Gestión</th>
       </tr>
     </thead>
     <tbody>
-        <tr v-for="item in items" :key="item.id">
-          <td v-for="column in columns" :key="column.key">
-            {{ item[column.key] }}
-          </td>
-          <td>{{ item }}</td>
-          <td>
-            <slot name="edit" :item="item">
-            </slot>
-          </td>
-          <td>
-            <slot name="delete" :item="item">
-            </slot>
-          </td>
-        </tr>
+      <slot name="table-body"></slot>
+        
     </tbody>
   </v-table>
 </template>
 
 <script setup>
-const props = defineProps(['items', 'columns'])
-console.log(props.items);
+const props = defineProps(['columns'])
+
 </script>
 
 <style>
