@@ -5,7 +5,7 @@
             <v-expansion-panel-text>
                 <v-row>
                     <v-col lg="2">
-                        <v-btn variant="tonal">Ver Products</v-btn>
+                        <v-btn @click="$emit('loadProducts')" variant="tonal">Ver Products</v-btn>
                     </v-col>
                     <v-col lg="2">
                         <v-btn variant="tonal">Ver Categorias</v-btn>
