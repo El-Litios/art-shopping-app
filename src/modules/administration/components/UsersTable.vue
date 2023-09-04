@@ -21,13 +21,26 @@
                     {{ item.role }}
                 </td>
                 <td class="text-center">
-                    <v-btn variant="tonal" class="font-weight-medium btn-update"><v-icon class="mdi mdi-book-edit"></v-icon>
-                    </v-btn>
+                    <Modal>
+                        <template v-slot:modal-button>
+                            <v-icon class="mdi mdi-book-edit"></v-icon>
+                        </template>
+
+                        <template v-slot:modal-title>
+                            Editar Informacion de Usuario
+                        </template>
+                    </Modal>
                 </td>
                 <td class="text-center">
-                    <v-btn variant="tonal" class="font-weight-medium btn-delete"><v-icon
-                            class="mdi mdi-trash-can-outline"></v-icon>
-                    </v-btn>
+                    <Modal>
+                        <template v-slot:modal-button>
+                            <v-icon class="mdi mdi-trash-can-outline"></v-icon>
+                        </template>
+
+                        <template v-slot:modal-title>
+                            Eliminar Informacion de Usuario
+                        </template>
+                    </Modal>
                 </td>
             </tr>
         </template>
@@ -36,6 +49,7 @@
 
 <script setup>
 import TableCore from './TableCore.vue'
+import Modal from './Modal.vue'
 const props = defineProps(['data'])
 console.log(props.data)
 const userColumns = [
@@ -43,20 +57,12 @@ const userColumns = [
     { key: 1, label: "Correo" },
     { key: 2, label: "Rol" },
 ]
-const roles = [{id: 0, name: 'Administrador'},{id: 1, name: 'Cliente'}]
+const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
 </script>
 
 <style>
 .v-table {
     background-color: rgba(0, 0, 0, 0.6) !important;
-}
-
-.btn-update:hover {
-    background-color: rgba(255, 217, 102, 0.5);
-}
-
-.btn-delete:hover {
-    background-color: rgba(255, 102, 102, 0.5);
 }
 
 .v-select,
