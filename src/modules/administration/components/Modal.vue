@@ -1,6 +1,5 @@
 <template>
     <v-dialog
-      v-model="dialog"
       persistent
       width="1024"
     >
@@ -28,15 +27,8 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            color="blue-darken-1"
-            variant="text"
-            @click="dialog = false"
-          >
-            Close
-          </v-btn>
            <slot name="modal-save-button">
-
+            
            </slot>
         </v-card-actions>
       </v-card>
@@ -44,11 +36,5 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
-const dialog =  ref(false)
-
-function myMethod(){
-  dialog = false;
-}
 
 </script>
