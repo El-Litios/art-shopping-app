@@ -1,5 +1,33 @@
 <template>
     <v-row class="container">
+        <v-col cols="4" lg="1" md="6" class="text-center">
+            <Modal v-model="showUpdateModal">
+                <template v-slot:modal-button>
+                    <v-icon class="add-button mdi mdi-plus"></v-icon>
+                </template>
+
+                <template v-slot:modal-title>
+                    Agregar Informacion de Usuario
+                </template>
+
+                <template v-slot:modal-inputs>
+                    <v-col cols="12" sm="6" md="4">
+                        <v-text-field label="Legal first name*" required></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                        <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
+                    </v-col>
+                </template>
+                <template v-slot:modal-save-button scope="Modal">
+                    <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
+                        Close
+                    </v-btn>
+                    <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
+                        Guardar
+                    </v-btn>
+                </template>
+            </Modal>
+        </v-col>
         <v-col cols="4" lg="4" md="6">
             <v-select class="select" bg-color="transparent" hide-details="true" label="Roles" :items="roles"
                 item-title="name"></v-select>
