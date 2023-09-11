@@ -21,7 +21,7 @@
                     {{ item.role }}
                 </td>
                 <td class="text-center">
-                    <Modal v-model="dialog">
+                    <Modal v-model="showUpdateModal">
                         <template v-slot:modal-button>
                             <v-icon class="mdi mdi-book-edit"></v-icon>
                         </template>
@@ -40,20 +40,31 @@
                             </v-col>
                         </template>
                         <template v-slot:modal-save-button scope="Modal">
-                            <v-btn color="blue-darken-1" variant="text" @click="dialog = false">
+                            <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
+                                Close
+                            </v-btn>
+                            <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
                                 Guardar
                             </v-btn>
                         </template>
                     </Modal>
                 </td>
                 <td class="text-center">
-                    <Modal>
+                    <Modal v-model="showDeleteModal">
                         <template v-slot:modal-button>
                             <v-icon class="mdi mdi-trash-can-outline"></v-icon>
                         </template>
 
                         <template v-slot:modal-title>
                             Eliminar Informacion de Usuario
+                        </template>
+                        <template v-slot:modal-save-button>
+                            <v-btn color="blue-darken-1" variant="text" @click="showDeleteModal = false">
+                                Close
+                            </v-btn>
+                            <v-btn color="blue-darken-1" variant="text" @click="showDeleteModal = false">
+                                Guardar
+                            </v-btn>
                         </template>
                     </Modal>
                 </td>
@@ -63,11 +74,12 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import TableCore from './TableCore.vue'
 import Modal from './Modal.vue'
 const props = defineProps(['data'])
-const dialog =  ref(false)
+const showUpdateModal = ref(false)
+const showDeleteModal = ref(false)
 console.log(props.data)
 const userColumns = [
     { key: 0, label: "Nombre" },
