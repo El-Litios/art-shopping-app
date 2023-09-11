@@ -21,13 +21,28 @@
                     {{ item.role }}
                 </td>
                 <td class="text-center">
-                    <Modal>
+                    <Modal v-model="dialog">
                         <template v-slot:modal-button>
                             <v-icon class="mdi mdi-book-edit"></v-icon>
                         </template>
 
                         <template v-slot:modal-title>
                             Editar Informacion de Usuario
+                        </template>
+
+                        <template v-slot:modal-inputs>
+                            <v-col cols="12" sm="6" md="4">
+                                <v-text-field label="Legal first name*" required></v-text-field>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="4">
+                                <v-text-field label="Legal middle name"
+                                    hint="example of helper text only on focus"></v-text-field>
+                            </v-col>
+                        </template>
+                        <template v-slot:modal-save-button scope="Modal">
+                            <v-btn color="blue-darken-1" variant="text" @click="dialog = false">
+                                Guardar
+                            </v-btn>
                         </template>
                     </Modal>
                 </td>
@@ -48,9 +63,11 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import TableCore from './TableCore.vue'
 import Modal from './Modal.vue'
 const props = defineProps(['data'])
+const dialog =  ref(false)
 console.log(props.data)
 const userColumns = [
     { key: 0, label: "Nombre" },
@@ -58,6 +75,7 @@ const userColumns = [
     { key: 2, label: "Rol" },
 ]
 const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
+
 </script>
 
 <style>
