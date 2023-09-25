@@ -12,17 +12,21 @@
 
                 <template v-slot:modal-inputs>
                     <v-col cols="12" sm="6" md="4">
-                        <v-text-field label="Legal first name*" required></v-text-field>
+                        <p class="text-h5 text--primary">Nombre:</p>
+                        <v-text-field required></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                        <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
+                        <p class="text-h5 text--primary">Correo:</p>
+                        <v-text-field required></v-text-field>
                     </v-col>
                 </template>
                 <template v-slot:modal-save-button scope="Modal">
-                    <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showCreateModal = false">
+                    <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"
+                        @click="showCreateModal = false">
                         <v-icon class="mdi mdi-window-close"></v-icon>
                     </v-btn>
-                    <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showCreateModal = false">
+                    <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal"
+                        @click="showCreateModal = false">
                         <v-icon class="mdi mdi-content-save"></v-icon>
                     </v-btn>
                 </template>
@@ -60,18 +64,21 @@
 
                         <template v-slot:modal-inputs>
                             <v-col cols="12" sm="6" md="4">
-                                <v-text-field label="Legal first name*" required></v-text-field>
+                                <p class="text-h5 text--primary">Nombre:</p>
+                                <v-text-field required></v-text-field>
                             </v-col>
                             <v-col cols="12" sm="6" md="4">
-                                <v-text-field label="Legal middle name"
-                                    hint="example of helper text only on focus"></v-text-field>
+                                <p class="text-h5 text--primary">Correo:</p>
+                                <v-text-field required></v-text-field>
                             </v-col>
                         </template>
                         <template v-slot:modal-save-button scope="Modal">
-                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showUpdateModal = false">
+                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"
+                                @click="showUpdateModal = false">
                                 <v-icon class="mdi mdi-window-close"></v-icon>
                             </v-btn>
-                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showUpdateModal = false">
+                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal"
+                                @click="showUpdateModal = false">
                                 <v-icon class="mdi mdi-content-save"></v-icon>
                             </v-btn>
                         </template>
@@ -87,10 +94,12 @@
                             Eliminar Informacion de Usuario
                         </template>
                         <template v-slot:modal-save-button>
-                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showDeleteModal = false">
+                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"
+                                @click="showDeleteModal = false">
                                 <v-icon class="mdi mdi-window-close"></v-icon>
                             </v-btn>
-                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showDeleteModal = false">
+                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal"
+                                @click="showDeleteModal = false">
                                 <v-icon class="mdi mdi-content-save"></v-icon>
                             </v-btn>
                         </template>
@@ -141,4 +150,8 @@ const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
     color: white !important;
     border: #101314;
 }
-</style>
+
+.v-text-field input {
+    font-size: 1.3em;
+    letter-spacing: 0.0095em !important;
+}</style>
