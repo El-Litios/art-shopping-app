@@ -1,7 +1,7 @@
 <template>
     <v-row class="container">
-        <v-col cols="4" lg="1" md="6" class="text-center">
-            <Modal v-model="showUpdateModal">
+        <v-col cols="12" lg="1" md="2" class="text-center">
+            <Modal v-model="showCreateModal">
                 <template v-slot:modal-button>
                     <v-icon class="add-button mdi mdi-plus"></v-icon>
                 </template>
@@ -19,20 +19,20 @@
                     </v-col>
                 </template>
                 <template v-slot:modal-save-button scope="Modal">
-                    <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
-                        Close
+                    <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showCreateModal = false">
+                        <v-icon class="mdi mdi-window-close"></v-icon>
                     </v-btn>
-                    <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
-                        Guardar
+                    <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showCreateModal = false">
+                        <v-icon class="mdi mdi-content-save"></v-icon>
                     </v-btn>
                 </template>
             </Modal>
         </v-col>
-        <v-col cols="4" lg="4" md="6">
+        <v-col cols="4" lg="4" md="4">
             <v-select class="select" bg-color="transparent" hide-details="true" label="Roles" :items="roles"
                 item-title="name"></v-select>
         </v-col>
-        <v-col cols="8" lg="4" md="6">
+        <v-col cols="8" lg="4" md="4">
             <v-text-field v-model="searchTerm" @input="updateSearchTerm" placeholder="Busqueda"> </v-text-field>
         </v-col>
     </v-row>
@@ -68,11 +68,11 @@
                             </v-col>
                         </template>
                         <template v-slot:modal-save-button scope="Modal">
-                            <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
-                                Close
+                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showUpdateModal = false">
+                                <v-icon class="mdi mdi-window-close"></v-icon>
                             </v-btn>
-                            <v-btn color="blue-darken-1" variant="text" @click="showUpdateModal = false">
-                                Guardar
+                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showUpdateModal = false">
+                                <v-icon class="mdi mdi-content-save"></v-icon>
                             </v-btn>
                         </template>
                     </Modal>
@@ -87,11 +87,11 @@
                             Eliminar Informacion de Usuario
                         </template>
                         <template v-slot:modal-save-button>
-                            <v-btn color="blue-darken-1" variant="text" @click="showDeleteModal = false">
-                                Close
+                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal" @click="showDeleteModal = false">
+                                <v-icon class="mdi mdi-window-close"></v-icon>
                             </v-btn>
-                            <v-btn color="blue-darken-1" variant="text" @click="showDeleteModal = false">
-                                Guardar
+                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal" @click="showDeleteModal = false">
+                                <v-icon class="mdi mdi-content-save"></v-icon>
                             </v-btn>
                         </template>
                     </Modal>
@@ -106,6 +106,7 @@ import { ref } from 'vue'
 import TableCore from './TableCore.vue'
 import Modal from './Modal.vue'
 const props = defineProps(['data'])
+const showCreateModal = ref(false)
 const showUpdateModal = ref(false)
 const showDeleteModal = ref(false)
 console.log(props.data)
