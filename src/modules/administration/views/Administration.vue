@@ -14,7 +14,7 @@
     
 <script setup>
 import { ref } from 'vue'
-import UsersTable from './../components/UsersTable.vue'
+import UsersTable from './../components/Users/UsersTable.vue'
 import ButtonsGroup from './../components/ButtonsGroup.vue'
 import Navbar from '@/components/shared/Navbar.vue'
 import useAdministration from '../composables/useAdministration'
