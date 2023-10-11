@@ -1,0 +1,104 @@
+<template>
+    <v-row class="container">
+        <v-col cols="12" lg="1" md="2" class="text-center">
+            <UsersAddModal v-model="showCreateModal" @unshowmodal="showCreateModal = false">
+                
+            </UsersAddModal>
+        </v-col>
+        <v-col cols="4" lg="4" md="4">
+            <v-select class="select" bg-color="transparent" hide-details="true" label="Roles" :items="roles"
+                item-title="name"></v-select>
+        </v-col>
+        <v-col cols="8" lg="4" md="4">
+            <v-text-field v-model="searchTerm" @input="updateSearchTerm" placeholder="Busqueda"> </v-text-field>
+        </v-col>
+    </v-row>
+    <TableCore :columns="userColumns">
+        <template v-slot:table-body>
+            <tr v-for="item in data" :key="item.id" class="text-white text-h6">
+                <td>
+                    {{ item.name }} {{ item.lastname }}
+                </td>
+                <td>
+                    {{ item.email }}
+                </td>
+                <td>
+                    {{ item.role }}
+                </td>
+                <td class="text-center">
+                    <UsersUpdateModal v-model="showUpdateModal" @unshowmodal="showUpdateModal = false">
+                    </UsersUpdateModal>
+                </td>
+                <td class="text-center">
+                    <Modal v-model="showDeleteModal">
+                        <template v-slot:modal-button>
+                            <v-icon class="mdi mdi-trash-can-outline"></v-icon>
+                        </template>
+
+                        <template v-slot:modal-title>
+                            Eliminar Informacion de Usuario
+                        </template>
+                        <template v-slot:modal-save-button>
+                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"
+                                @click="showDeleteModal = false">
+                                <v-icon class="mdi mdi-window-close"></v-icon>
+                            </v-btn>
+                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal"
+                                @click="showDeleteModal = false">
+                                <v-icon class="mdi mdi-content-save"></v-icon>
+                            </v-btn>
+                        </template>
+                    </Modal>
+                </td>
+            </tr>
+        </template>
+    </TableCore>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import TableCore from '../TableCore.vue'
+import UsersAddModal from './UsersAddModal.vue'
+import UsersUpdateModal from './UsersUpdateModal.vue'
+import Modal from '../Modal.vue'
+const props = defineProps(['data'])
+const showCreateModal = ref(false)
+const showUpdateModal = ref(false)
+const showDeleteModal = ref(false)
+console.log(props.data)
+const userColumns = [
+    { key: 0, label: "Nombre" },
+    { key: 1, label: "Correo" },
+    { key: 2, label: "Rol" },
+]
+const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
+
+</script>
+
+<style>
+.v-table {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.v-select,
+.v-field {
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+}
+
+.v-list {
+    background: transparent !important;
+    backdrop-filter: blur(5px);
+    height: 61px;
+}
+
+.v-list-item {
+    background-color: #101314 !important;
+    color: white !important;
+    border: #101314;
+}
+
+.v-text-field input {
+    font-size: 1.3em;
+    letter-spacing: 0.0095em !important;
+}</style>
