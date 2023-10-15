@@ -1,15 +1,15 @@
 import {db} from '@/api';
 import { collection, getDocs, query } from "firebase/firestore";
 
-export const getUsersList = async ({commit}) => {
-    const usersArr = [];
-    const usersCollectionQuery = query(collection(db, "users"));
-    const usersCollection = await getDocs(usersCollectionQuery);
-    usersCollection.forEach((doc) => {
+export const getProductsList = async ({commit}) => {
+    const productsArr = [];
+    const productsCollectionQuery = query(collection(db, "products"));
+    const productsCollection = await getDocs(productsCollectionQuery);
+    productsCollection.forEach((doc) => {
       let data = doc.data()
                 data.id = doc.id
                 console.log(data);
-                usersArr.push(data)
+                productsArr.push(data)
     });
-    commit('setDataToArray', usersArr)
+    commit('setDataToArray', productsArr)
 }
