@@ -5,7 +5,7 @@
         </template>
 
         <template v-slot:modal-title>
-            Eliminar Informacion de Usuario
+            Eliminar Producto
         </template>
         <template v-slot:modal-save-button>
             <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"

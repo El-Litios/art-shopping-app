@@ -5,7 +5,7 @@
         </template>
 
         <template v-slot:modal-title>
-            Editar Informacion de Usuario
+            Editar Informacion de Producto
         </template>
 
         <template v-slot:modal-inputs>
