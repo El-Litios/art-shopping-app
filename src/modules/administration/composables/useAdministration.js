@@ -6,7 +6,7 @@ const useAdministration = () => {
   //const searchTerm = ref('');
 
   const getUsers = async() => {
-    await  store.dispatch("administration/getUsersList")
+    await  store.dispatch("administration/getProductsList")
   }
 
 
