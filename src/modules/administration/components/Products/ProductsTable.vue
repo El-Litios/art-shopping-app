@@ -13,17 +13,17 @@
             <v-text-field v-model="searchTerm" @input="updateSearchTerm" placeholder="Busqueda"> </v-text-field>
         </v-col>
     </v-row>
-    <TableCore :columns="userColumns">
+    <TableCore :columns="productsColumns">
         <template v-slot:table-body>
             <tr v-for="item in data" :key="item.id" class="text-white text-h6">
                 <td>
-                    {{ item.name }} {{ item.lastname }}
+                    {{ item.name }}
                 </td>
                 <td>
-                    {{ item.email }}
+                    {{ item.category }}
                 </td>
                 <td>
-                    {{ item.role }}
+                    <a :href=" item.imgUrl">Ir</a>
                 </td>
                 <td class="text-center">
                     <ProductsUpdateModal v-model="showUpdateModal" @unshowmodal="showUpdateModal = false">
@@ -49,10 +49,10 @@ const showCreateModal = ref(false)
 const showUpdateModal = ref(false)
 const showDeleteModal = ref(false)
 console.log(props.data)
-const userColumns = [
+const productsColumns = [
     { key: 0, label: "Nombre" },
-    { key: 1, label: "Correo" },
-    { key: 2, label: "Rol" },
+    { key: 1, label: "Categoria" },
+    { key: 2, label: "Url" },
 ]
 const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
 
