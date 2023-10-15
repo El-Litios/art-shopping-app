@@ -30,25 +30,8 @@
                     </ProductsUpdateModal>
                 </td>
                 <td class="text-center">
-                    <Modal v-model="showDeleteModal">
-                        <template v-slot:modal-button>
-                            <v-icon class="mdi mdi-trash-can-outline"></v-icon>
-                        </template>
-
-                        <template v-slot:modal-title>
-                            Eliminar Informacion de Usuario
-                        </template>
-                        <template v-slot:modal-save-button>
-                            <v-btn rounded="lg" size="large" class="text-h5" color="red-darken-1" variant="tonal"
-                                @click="showDeleteModal = false">
-                                <v-icon class="mdi mdi-window-close"></v-icon>
-                            </v-btn>
-                            <v-btn rounded="lg" size="large" class="text-h5" color="blue-darken-1" variant="tonal"
-                                @click="showDeleteModal = false">
-                                <v-icon class="mdi mdi-content-save"></v-icon>
-                            </v-btn>
-                        </template>
-                    </Modal>
+                    <ProductsDeleteModal v-model="showDeleteModal" @unshowmodal="showUpdateModal = false">
+                    </ProductsDeleteModal>
                 </td>
             </tr>
         </template>
@@ -60,7 +43,7 @@ import { ref } from 'vue'
 import TableCore from '../TableCore.vue'
 import ProductsAddModal from './ProductsAddModal.vue'
 import ProductsUpdateModal from './ProductsUpdateModal.vue'
-import Modal from '../Modal.vue'
+import ProductsDeleteModal from './ProductsDeleteModal.vue'
 const props = defineProps(['data'])
 const showCreateModal = ref(false)
 const showUpdateModal = ref(false)
