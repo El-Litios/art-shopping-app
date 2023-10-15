@@ -1,9 +1,9 @@
 <template>
     <v-row class="container">
         <v-col cols="12" lg="1" md="2" class="text-center">
-            <UsersAddModal v-model="showCreateModal" @unshowmodal="showCreateModal = false">
+            <ProductsAddModal v-model="showCreateModal" @unshowmodal="showCreateModal = false">
                 
-            </UsersAddModal>
+            </ProductsAddModal>
         </v-col>
         <v-col cols="4" lg="4" md="4">
             <v-select class="select" bg-color="transparent" hide-details="true" label="Roles" :items="roles"
@@ -26,8 +26,8 @@
                     {{ item.role }}
                 </td>
                 <td class="text-center">
-                    <UsersUpdateModal v-model="showUpdateModal" @unshowmodal="showUpdateModal = false">
-                    </UsersUpdateModal>
+                    <ProductsUpdateModal v-model="showUpdateModal" @unshowmodal="showUpdateModal = false">
+                    </ProductsUpdateModal>
                 </td>
                 <td class="text-center">
                     <Modal v-model="showDeleteModal">
@@ -58,8 +58,8 @@
 <script setup>
 import { ref } from 'vue'
 import TableCore from '../TableCore.vue'
-import UsersAddModal from './UsersAddModal.vue'
-import UsersUpdateModal from './UsersUpdateModal.vue'
+import ProductsAddModal from './ProductsAddModal.vue'
+import ProductsUpdateModal from './ProductsUpdateModal.vue'
 import Modal from '../Modal.vue'
 const props = defineProps(['data'])
 const showCreateModal = ref(false)

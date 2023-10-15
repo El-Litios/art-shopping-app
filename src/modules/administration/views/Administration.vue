@@ -2,7 +2,7 @@
     <Navbar></Navbar>
     <v-container>
         <ButtonsGroup class="mb-5" @loadData="onLoadData"></ButtonsGroup>
-        <UsersTable v-if="currentTable == 'Products'" :data="data"></UsersTable>
+        <ProductsTable v-if="currentTable == 'Products'" :data="data"></ProductsTable>
         <div v-if="!isLoaded" class="Message text-center text-h4 pt-5">
             Debes presionar un boton para cargar datos....
         </div>
@@ -14,7 +14,7 @@
     
 <script setup>
 import { ref } from 'vue'
-import UsersTable from './../components/Users/UsersTable.vue'
+import ProductsTable from './../components/Products/ProductsTable.vue'
 import ButtonsGroup from './../components/ButtonsGroup.vue'
 import Navbar from '@/components/shared/Navbar.vue'
 import useAdministration from '../composables/useAdministration'

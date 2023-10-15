@@ -30,7 +30,6 @@ const managementButtons = [
     {title: 'Ver Productos', name: 'Product'},
     {title: 'Ver Categorías', name: 'Category'},
     {title: 'Ver Pedidos', name: 'Order'},
-    {title: 'Ver Usuarios', name: 'User'},
 ]
 const designButtons = [
     {title: 'Carousel', name: 'Carousel'},
