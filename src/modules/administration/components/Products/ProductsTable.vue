@@ -6,7 +6,7 @@
             </ProductsAddModal>
         </v-col>
         <v-col cols="4" lg="4" md="4">
-            <v-select class="select" bg-color="transparent" hide-details="true" label="Roles" :items="roles"
+            <v-select class="select" bg-color="transparent" hide-details="true" label="Categorias" :items="categories"
                 item-title="name"></v-select>
         </v-col>
         <v-col cols="8" lg="4" md="4">
@@ -30,7 +30,7 @@
                     </ProductsUpdateModal>
                 </td>
                 <td class="text-center">
-                    <ProductsDeleteModal v-model="showDeleteModal" @unshowmodal="showUpdateModal = false">
+                    <ProductsDeleteModal v-model="showDeleteModal" @unshowmodal="showDeleteModal = false">
                     </ProductsDeleteModal>
                 </td>
             </tr>
@@ -54,7 +54,7 @@ const productsColumns = [
     { key: 1, label: "Categoria" },
     { key: 2, label: "Url" },
 ]
-const roles = [{ id: 0, name: 'Administrador' }, { id: 1, name: 'Cliente' }]
+const categories = [{ id: 0, name: 'Dibujos' }, { id: 1, name: 'Ilustraciones' }]
 
 </script>
 
